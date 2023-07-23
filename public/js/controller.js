@@ -4,21 +4,23 @@ import View from "./view.js";
 export default class Controller {
 
     constructor() {
+        const self = this;
+
         this.model = new TicTacToe();
         this.view = new View();
 
         this.view.playEvent.addListener(function (move) {
-            this.model.play(move);
+            self.model.play(move);
         });
 
         this.model.updateCellEvent.addListener(function (data) {
-            this.view.updateCell(data);
+            self.view.updateCell(data);
         });
         this.model.victoryEvent.addListener(function (winner) {
-            this.view.victory(winner);
+            self.view.victory(winner);
         });
         this.model.drawEvent.addListener(function () {
-            this.view.draw();
+            self.view.draw();
         });
     }
 

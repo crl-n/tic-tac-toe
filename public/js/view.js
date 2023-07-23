@@ -7,6 +7,8 @@ export default class View {
     }
 
     render() {
+        const self = this;
+
         const game = document.getElementById('game-container');
         const board = document.createElement('div');
         board.className = 'board';
@@ -16,7 +18,7 @@ export default class View {
             cell.className = 'cell';
 
             cell.addEventListener('click', function () {
-                this.playEvent.trigger(i);
+                self.playEvent.trigger(i);
             });
 
             board.appendChild(cell);

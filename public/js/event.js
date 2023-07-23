@@ -2,6 +2,7 @@ export default class Event {
 
     constructor() {
         this.listeners = [];
+        this.trigger = this.trigger.bind(this);
     }
 
     addListener(listener) {
