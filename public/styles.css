@@ -1,0 +1,32 @@
+body {
+    background-color: #1f463d;
+    color: #ffffff;
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .main-container {
+        display: block;
+        text-align: center;
+    }
+
+    #game-container {
+        background-color: #ffffff;
+    }
+}
+
+.board {
+    background-color: red;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 450px;
+    height: 450px;
+
+    .cell {
+        display: inline-block;
+        background-color: blue;
+
+        border: 1px solid #ffffff;
+    }
+}
