@@ -33,17 +33,15 @@ export default class View {
         game.appendChild(this.message);
     }
 
-    updateCell() {
-
+    updateCell(data) {
+        this.cells[data.index].innerText = `${data.player}`;
     }
 
-    victory() {
-
+    victory(winner) {
+        this.message.textContent = `${winner} wins!`;
     }
 
     draw() {
-
+        this.message.textContent = 'The game is a draw!';
     }
-
-
 }

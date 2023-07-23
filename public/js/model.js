@@ -13,7 +13,20 @@ export default class TicTacToe {
     }
 
     play(move) {
+        if (this.board[move]) {
+            return ;
+        }
 
+        this.board[move] = this.currentPlayer;
+        this.updateCellEvent.trigger({ index: move, player: this.currentPlayer });
+        this.switchPlayer();
+    }
+
+    switchPlayer() {
+        if (this.currentPlayer === 'X') {
+            return this.currentPlayer = 'O';
+        }
+        this.currentPlayer = 'X';
     }
 
     victory() {
