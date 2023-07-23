@@ -1,0 +1,16 @@
+{
+  "name": "mvc-tic-tac-toe",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "MVC Tic Tac Toe with Vanilla JS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carl Nysten",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
