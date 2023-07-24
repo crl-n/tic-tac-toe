@@ -10,17 +10,13 @@ body {
         display: block;
         text-align: center;
     }
-
-    #game-container {
-        background-color: #ffffff;
-    }
 }
 
 .board {
     background-color: red;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 10rem 10rem 10rem;
+    grid-template-rows: 1fr 1fr 1fr;
     width: 450px;
     height: 450px;
     border: 1px solid #ffffff;
@@ -31,6 +27,12 @@ body {
         justify-content: center;
         align-items: center;
         font-size: 4em;
+
         border: 2px solid #ffffff;
     }
+}
+
+.message {
+    font-size: 2em;
+    padding: 1em;
 }
