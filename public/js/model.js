@@ -50,7 +50,13 @@ export default class TicTacToe {
             if (allCurrentPlayer(axis)) {
                 this.victoryEvent.trigger(this.currentPlayer);
                 this.finished = true;
+                return ;
             }
+        }
+
+        if (!this.board.some((value, i, array) => !value)) {
+            this.drawEvent.trigger();
+            this.finished = true;
         }
     }
 
