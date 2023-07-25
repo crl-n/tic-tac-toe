@@ -10,3 +10,10 @@ Here's what I've used:
 
 ### Coming Up
 - **Monte Carlo Tree Search**. I plan to use it to create an AI you can play against. I also plan to add the option of making two AI players play against each other.
+
+## Running It
+Clone the repository, make sure you have npm installed and run:
+```
+npm i && npm run start
+```
+Open your browser and go to `localhost:3000`
