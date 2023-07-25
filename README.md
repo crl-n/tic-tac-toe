@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-<img width="1728" alt="image" src="https://github.com/crl-n/tic-tac-toe/assets/65853349/1c22605e-90ac-4dd7-8872-72d4c429ac67">
+<img width="1728" alt="image" src="https://github.com/crl-n/tic-tac-toe/assets/65853349/7c3b3a5f-d821-4537-b5b6-9bfa181102d2">
 
 ## About
 This is, well... Tic Tac Toe! I made this app as a side project to try out some new stuff and practice coding.
