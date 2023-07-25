@@ -4,7 +4,7 @@ import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
-const port = 3030;
+const port = 3000;
 
 app.use(express.static(__dirname + '/public'));
 
