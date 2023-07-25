@@ -2,7 +2,7 @@
   "name": "mvc-tic-tac-toe",
   "type": "module",
   "version": "1.0.0",
-  "description": "MVC Tic Tac Toe with Vanilla JS",
+  "description": "Tic Tac Toe",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
