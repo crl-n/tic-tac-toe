@@ -19,7 +19,7 @@ export default class TicTacToe {
     }
 
     play(move) {
-        if (this.board[move]) {
+        if (this.finished || this.board[move]) {
             return ;
         }
 
@@ -37,7 +37,7 @@ export default class TicTacToe {
         const axes = {
             horizontal: [0, 1, 2].map(i => i + Math.floor(move / 3) * 3),
             vertical: [0, 3, 6].map(i => i + move % 3),
-            diagonal: [0, 4, 9],
+            diagonal: [0, 4, 8],
             counterDiagonal: [2, 4, 6]
         };
 

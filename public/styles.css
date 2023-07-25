@@ -32,6 +32,17 @@ body {
     }
 }
 
+.reset {
+    width: 450px;
+    height: 60px;
+    background-color: #488677;
+    font-size: 2em;
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .message {
     font-size: 2em;
     padding: 1em;

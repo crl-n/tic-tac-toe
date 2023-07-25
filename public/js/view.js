@@ -4,6 +4,7 @@ export default class View {
 
     constructor() {
         this.playEvent = new Event();
+        this.resetEvent = new Event();
     }
 
     render() {
@@ -26,15 +27,30 @@ export default class View {
             return cell;
         });
 
+        this.resetButton = document.createElement('div');
+        this.resetButton.className = 'reset';
+        this.resetButton.addEventListener('click', function () {
+            self.resetEvent.trigger();
+        });
+        this.resetButton.innerText = 'Reset';
+
         this.message = document.createElement('div');
         this.message.className = 'message';
 
         game.appendChild(board);
+        game.appendChild(this.resetButton);
         game.appendChild(this.message);
     }
 
     updateCell(data) {
         this.cells[data.index].innerText = `${data.player}`;
+    }
+
+    reset() {
+        for (const cell of this.cells) {
+            cell.innerText = '';
+        }
+        this.message.innerText = '';
     }
 
     victory(winner) {

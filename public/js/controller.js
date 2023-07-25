@@ -12,6 +12,12 @@ export default class Controller {
         this.view.playEvent.addListener(function (move) {
             self.model.play(move);
         });
+        this.view.resetEvent.addListener(function () {
+            self.model.reset();
+        })
+        this.view.resetEvent.addListener(function () {
+            self.view.reset();
+        })
 
         this.model.updateCellEvent.addListener(function (data) {
             self.view.updateCell(data);
