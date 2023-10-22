@@ -1,6 +1,7 @@
 import TicTacToe from "./model.js";
 import View from "./view.js";
 import PlayerType from "./playerType.js";
+import { randomMove } from "./ai.js";
 
 export default class Controller {
 
@@ -34,14 +35,7 @@ export default class Controller {
             self.view.updateTurnIndicators(activePlayer);
 
             if (activePlayer === 'O') {
-                let validMoves = self.model.board.reduce((acc, val, i) => {
-                    if (val === undefined) {
-                        acc.push(i);
-                    }
-                    return acc;
-                }, []);
-
-                let move = validMoves[Math.floor(Math.random() * validMoves.length)];
+                let move = randomMove(self.model.board);
 
                 setTimeout(() => self.model.play(move), 1000);
             }
