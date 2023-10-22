@@ -13,5 +13,5 @@ app.get('/', function (req, res) {
 });
 
 app.listen(port, function () {
-    console.log(`Tic Tac Toe up and running at port ${port}`);
+    console.log(`Tic Tac Toe up and running at port http://localhost:${port}`);
 });
