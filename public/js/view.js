@@ -5,6 +5,8 @@ export default class View {
     constructor() {
         this.playEvent = new Event();
         this.resetEvent = new Event();
+        this.activeColor = getComputedStyle(document.documentElement)
+            .getPropertyValue('--primary');
     }
 
     render() {
@@ -13,6 +15,21 @@ export default class View {
         const game = document.getElementById('game-container');
         const board = document.createElement('div');
         board.className = 'board';
+
+        const turnIndicatorContainer = document.createElement('div');
+        turnIndicatorContainer.className = 'indicator-container';
+
+        const xIndicator = document.createElement('div');
+        xIndicator.className = 'indicator';
+        xIndicator.id = 'x-turn-indicator';
+        xIndicator.innerText = 'Player X';
+        turnIndicatorContainer.appendChild(xIndicator);
+
+        const oIndicator = document.createElement('div');
+        oIndicator.className = 'indicator';
+        oIndicator.id = 'o-turn-indicator';
+        oIndicator.innerText = 'Player O';
+        turnIndicatorContainer.appendChild(oIndicator);
 
         this.cells = Array(9).fill().map(function (_, i) {
             const cell = document.createElement('div');
@@ -37,6 +54,7 @@ export default class View {
         this.message = document.createElement('div');
         this.message.className = 'message';
 
+        game.appendChild(turnIndicatorContainer);
         game.appendChild(board);
         game.appendChild(this.resetButton);
         game.appendChild(this.message);
@@ -44,6 +62,16 @@ export default class View {
 
     updateCell(data) {
         this.cells[data.index].innerText = `${data.player}`;
+    }
+
+    updateTurnIndicators(activePlayer) {
+        const xIndicator = document.getElementById('x-turn-indicator');
+        const oIndicator = document.getElementById('o-turn-indicator');
+        const activeIndicator = activePlayer === 'X' ? xIndicator : oIndicator;
+        const inactiveIndicator = activePlayer === 'X' ? oIndicator : xIndicator;
+
+        activeIndicator.style.backgroundColor = this.activeColor;
+        inactiveIndicator.style.backgroundColor = '';
     }
 
     reset() {

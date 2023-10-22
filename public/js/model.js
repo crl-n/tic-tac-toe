@@ -8,6 +8,7 @@ export default class TicTacToe {
         this.finished = false;
 
         this.updateCellEvent = new Event();
+        this.switchPlayerEvent = new Event();
         this.victoryEvent = new Event();
         this.drawEvent = new Event();
     }
@@ -30,6 +31,7 @@ export default class TicTacToe {
 
         if (!this.finished) {
             this.switchPlayer();
+            this.switchPlayerEvent.trigger(this.currentPlayer);
         }
     }
 

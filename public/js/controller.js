@@ -22,6 +22,9 @@ export default class Controller {
         this.model.updateCellEvent.addListener(function (data) {
             self.view.updateCell(data);
         });
+        this.model.switchPlayerEvent.addListener(function (activePlayer) {
+            self.view.updateTurnIndicators(activePlayer);
+        });
         this.model.victoryEvent.addListener(function (winner) {
             self.view.victory(winner);
         });
