@@ -1,6 +1,15 @@
+:root {
+    --primary: #488677;
+    --primary-dark: #1f463d;
+    --text: #ffffff;
+    --borders: #ffffff;
+
+    --hover-brightness: 1.1;
+}
+
 body {
-    background-color: #1f463d;
-    color: #ffffff;
+    background-color: var(--primary-dark);
+    color: var(--text);
     font-family: Helvetica, sans-serif;
     display: flex;
     align-items: center;
@@ -12,6 +21,10 @@ body {
     }
 }
 
+h1 {
+    user-select: none;
+}
+
 .board {
     background-color: red;
     display: grid;
@@ -19,28 +32,37 @@ body {
     grid-template-rows: 1fr 1fr 1fr;
     width: 450px;
     height: 450px;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--borders);
 
     .cell {
-        background-color: #488677;
+        background-color: var(--primary);
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 4em;
 
-        border: 2px solid #ffffff;
+        border: 2px solid var(--borders);
+    }
+
+    .cell:hover {
+        filter: brightness(var(--hover-brightness));
     }
 }
 
 .reset {
     width: 450px;
     height: 60px;
-    background-color: #488677;
+    background-color: var(--primary);
     font-size: 2em;
     margin-top: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+}
+
+.reset:hover {
+    filter: brightness(var(--hover-brightness));
 }
 
 .message {
