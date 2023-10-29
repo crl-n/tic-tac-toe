@@ -1,7 +1,7 @@
 import TicTacToe from "./model.js";
 import View from "./view.js";
 import PlayerType from "./playerType.js";
-import { randomMove } from "./ai.js";
+import { minMax } from "./ai.js";
 
 export default class Controller {
 
@@ -35,9 +35,10 @@ export default class Controller {
             self.view.updateTurnIndicators(activePlayer);
 
             if (activePlayer === 'O') {
-                let move = randomMove(self.model.board);
+                let [util, move] = minMax(self.model.board, 'O');
+                console.log('Min max move', move, 'util', util);
 
-                setTimeout(() => self.model.play(move), 1000);
+                self.model.play(move);
             }
         });
         this.model.victoryEvent.addListener(function (winner) {

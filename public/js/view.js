@@ -23,6 +23,7 @@ export default class View {
         xIndicator.className = 'indicator';
         xIndicator.id = 'x-turn-indicator';
         xIndicator.innerText = 'Player X';
+        xIndicator.style.backgroundColor = this.activeColor;
         turnIndicatorContainer.appendChild(xIndicator);
 
         const oIndicator = document.createElement('div');
